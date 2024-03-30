@@ -1,4 +1,4 @@
-import { a, button, div, h1, img, p, useRef } from '../core';
+import { a, button, div, h1, img, p, useRef } from '@sonnetjs/client';
 
 let counter = 0;
 

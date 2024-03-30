@@ -1,5 +1,5 @@
 import './style.css';
-import { render } from '../core';
+import { render } from '@sonnetjs/client';
 import { Counter } from './counter';
 
 render('app', Counter);

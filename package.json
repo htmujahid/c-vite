@@ -11,5 +11,8 @@
   "devDependencies": {
     "typescript": "^5.2.2",
     "vite": "^5.2.6"
+  },
+  "dependencies": {
+    "@sonnetjs/client": "^0.0.1"
   }
 }
