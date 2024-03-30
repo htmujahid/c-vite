@@ -8,7 +8,6 @@ class CHTMLBodyElement extends CHTMLElement<HTMLBodyElement> {
     const html = document.createElement('body');
     this.el = html;
   }
-
 }
 
 export function body() {

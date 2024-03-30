@@ -8,11 +8,6 @@ class CHTMLDivElement extends CHTMLElement<HTMLDivElement> {
     const html = document.createElement('div');
     this.el = html;
   }
-
-  public align(align: string) {
-    this.el.align = align;
-    return this;
-  }
 }
 
 export function div() {

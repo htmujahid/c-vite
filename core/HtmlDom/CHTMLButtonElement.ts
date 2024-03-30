@@ -8,7 +8,7 @@ class CHTMLButtonElement extends CHTMLElement<HTMLButtonElement> {
     const html = document.createElement('button');
     this.el = html;
   }
-  
+
   public disabled(value: boolean) {
     if (this.el) {
       this.el.disabled = value;
@@ -56,16 +56,16 @@ class CHTMLButtonElement extends CHTMLElement<HTMLButtonElement> {
       this.el.name = value;
     }
     return this;
-  } 
+  }
 
   public popoverTargetAction(value: string) {
-    if(this.el){
+    if (this.el) {
       this.el.popoverTargetAction = value;
     }
     return this;
   }
 
-  public type(value: "submit" | "reset" | "button") {
+  public type(value: 'submit' | 'reset' | 'button') {
     if (this.el) {
       this.el.type = value;
     }
@@ -78,7 +78,6 @@ class CHTMLButtonElement extends CHTMLElement<HTMLButtonElement> {
     }
     return this;
   }
-
 }
 
 export function button() {

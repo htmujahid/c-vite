@@ -3,12 +3,13 @@ import CElement from './CElement';
 export default class CHTMLElement<T> extends CElement {
   public declare el?: HTMLElement;
 
-  constructor() {
+  constructor(tag?: string) {
     super();
-    this.initReadOnly();
+    if (tag) {
+      const html = document.createElement(tag);
+      this.el = html;
+    }
   }
-
-  private initReadOnly() {}
 
   public accessKey(value: string) {
     if (this.el) {
@@ -161,4 +162,132 @@ export default class CHTMLElement<T> extends CElement {
   public get() {
     return this.el as T;
   }
+}
+
+export function article() {
+  return new CHTMLElement<HTMLElement>('article');
+}
+
+export function aside() {
+  return new CHTMLElement<HTMLElement>('aside');
+}
+
+export function footer() {
+  return new CHTMLElement<HTMLElement>('footer');
+}
+
+export function header() {
+  return new CHTMLElement<HTMLElement>('header');
+}
+
+export function hgroup() {
+  return new CHTMLElement<HTMLElement>('hgroup');
+}
+
+export function main() {
+  return new CHTMLElement<HTMLElement>('main');
+}
+
+export function nav() {
+  return new CHTMLElement<HTMLElement>('nav');
+}
+
+export function section() {
+  return new CHTMLElement<HTMLElement>('section');
+}
+
+export function search() {
+  return new CHTMLElement<HTMLElement>('search');
+}
+
+export function dd() {
+  return new CHTMLElement<HTMLElement>('dd');
+}
+
+export function figcaption() {
+  return new CHTMLElement<HTMLElement>('figcaption');
+}
+
+export function figure() {
+  return new CHTMLElement<HTMLElement>('figure');
+}
+
+export function abbr() {
+  return new CHTMLElement<HTMLElement>('abbr');
+}
+
+export function b() {
+  return new CHTMLElement<HTMLElement>('b');
+}
+
+export function bdi() {
+  return new CHTMLElement<HTMLElement>('bdi');
+}
+
+export function dfn() {
+  return new CHTMLElement<HTMLElement>('dfn');
+}
+
+export function kbd() {
+  return new CHTMLElement<HTMLElement>('kbd');
+}
+
+export function mark() {
+  return new CHTMLElement<HTMLElement>('mark');
+}
+
+export function rp() {
+  return new CHTMLElement<HTMLElement>('rp');
+}
+
+export function rt() {
+  return new CHTMLElement<HTMLElement>('rt');
+}
+
+export function ruby() {
+  return new CHTMLElement<HTMLElement>('ruby');
+}
+
+export function s() {
+  return new CHTMLElement<HTMLElement>('s');
+}
+
+export function samp() {
+  return new CHTMLElement<HTMLElement>('samp');
+}
+
+export function small() {
+  return new CHTMLElement<HTMLElement>('small');
+}
+
+export function strong() {
+  return new CHTMLElement<HTMLElement>('strong');
+}
+
+export function sub() {
+  return new CHTMLElement<HTMLElement>('sub');
+}
+
+export function sup() {
+  return new CHTMLElement<HTMLElement>('sup');
+}
+
+export function u() {
+  return new CHTMLElement<HTMLElement>('u');
+}
+
+export function variable() {
+  return new CHTMLElement<HTMLElement>('var');
+}
+
+export function wbr() {
+  return new CHTMLElement<HTMLElement>('wbr');
+}
+
+export function noscript() {
+  return new CHTMLElement<HTMLElement>('noscript');
+}
+
+export function summary() {
+  return new CHTMLElement<HTMLElement>('summary');
 }

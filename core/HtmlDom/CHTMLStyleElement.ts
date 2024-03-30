@@ -14,11 +14,6 @@ class CHTMLStyleElement extends CHTMLElement<HTMLStyleElement> {
     return this;
   }
 
-  public type(value: string) {
-    this.el.type = value;
-    return this;
-  }
-
   public disabled(value: boolean) {
     this.el.disabled = value;
     return this;

@@ -55,5 +55,4 @@ export default class CElement extends CNode {
     }
     return this;
   }
-
 }

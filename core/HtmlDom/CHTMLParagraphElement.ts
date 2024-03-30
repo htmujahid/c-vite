@@ -8,11 +8,6 @@ class CHTMLParagraphElement extends CHTMLElement<HTMLParagraphElement> {
     const html = document.createElement('p');
     this.el = html;
   }
-
-  public align(align: string) {
-    this.el.align = align;
-    return this;
-  }
 }
 
 export function p() {
