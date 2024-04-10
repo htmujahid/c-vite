@@ -1,6 +1,10 @@
 import './style.css';
-import { render } from '@sonnetjs/client';
-import { Counter } from './counter';
+import { render } from '@sonnetjs/core';
+import Counter from './counter';
 
-render('app', Counter);
+(() => {
+  const CounterComponent = new Counter();
+  render('app', CounterComponent.get());
+  CounterComponent.loadScripts();
+})()
 

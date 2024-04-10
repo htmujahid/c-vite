@@ -1,45 +1,48 @@
-import { a, button, div, h1, img, p, useRef } from '@sonnetjs/client';
+import { SonnetElement, a, button, div, h1, img, p } from '@sonnetjs/core';
 
-let counter = 0;
+export default class Counter extends SonnetElement {
+  counter = 0;
 
-const buttonRef = useRef<HTMLButtonElement>(null);
+  script(): void {
+    const button = document.getElementById('counter') as HTMLButtonElement;
 
-const Counter = div()
-  .children(
-    a()
-      .href('https://vitejs.dev')
-      .target('blank')
+    button.addEventListener('click', () => {
+      this.counter += 1;
+      button.innerText = `count is ${this.counter}`;
+    });
+  }
+
+  get() {
+    return div()
       .children(
-        img()
-          .src('https://vitejs.dev/logo.svg')
-          .className('logo')
-          .alt('Vite Logo')
+        a()
+          .href('https://vitejs.dev')
+          .target('blank')
+          .children(
+            img()
+              .src('https://vitejs.dev/logo.svg')
+              .className('logo')
+              .alt('Vite Logo')
+              .get(),
+          )
+          .get(),
+        h1().innerText('Vite').get(),
+        div()
+          .className('card')
+          .children(
+            button()
+              .id('counter')
+              .type('button')
+              .innerText(`count is ${this.counter}`)
+              .className('btn')
+              .get(),
+          )
+          .get(),
+        p()
+          .innerText('Edit src/main.ts and save to test HMR.')
+          .className('read-the-docs')
           .get(),
       )
-      .get(),
-    h1().innerText('Vite').get(),
-    div()
-      .className('card')
-      .children(
-        button()
-          .ref(buttonRef)
-          .id('counter')
-          .type('button')
-          .innerText(`count is ${counter}`)
-          .className('btn')
-          .get(),
-      )
-      .get(),
-    p()
-      .innerText('Edit src/main.ts and save to test HMR.')
-      .className('read-the-docs')
-      .get(),
-  )
-  .get();
-
-buttonRef.current.addEventListener('click', () => {
-  counter += 1;
-  buttonRef.current.innerText = `count is ${counter}`;
-});
-
-export { Counter };
+      .get();
+  }
+}
