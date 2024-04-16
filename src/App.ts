@@ -1,4 +1,5 @@
-import { Component, SonnetElement } from '@sonnetjs/core';
+import { SonnetElement } from '@sonnetjs/core';
+import type { Component } from '@sonnetjs/core';
 import Counter from './Counter';
 
 const CounterComponent = new Counter();
