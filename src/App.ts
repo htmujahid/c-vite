@@ -1,13 +1,10 @@
-import { SonnetElement } from '@sonnetjs/core';
-import type { Component } from '@sonnetjs/core';
+import { $component, SonnetComponent } from '@sonnetjs/core';
 import Counter from './Counter';
 
-const CounterComponent = new Counter();
-
-export default class App extends SonnetElement {
-  components: Component[] = [CounterComponent];
-
+class App extends SonnetComponent {
   get() {
-    return CounterComponent.get();
+    return Counter().get();
   }
 }
+
+export default $component(App);
