@@ -1,5 +1,5 @@
 import { $component, SonnetComponent } from '@sonnetjs/core';
-import Counter from './Counter';
+import Counter from './counter';
 
 class App extends SonnetComponent {
   get() {
